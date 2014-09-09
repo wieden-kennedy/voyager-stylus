@@ -5,7 +5,7 @@ var voyager = require('voyager')
   , vfs = require('vinyl-fs')
   , CWD = process.cwd();
 
-voyager.task('stylus', function (done) {
+voyager.task('stylus', 'styles', function (done) {
   vfs.src([
       CWD + '/src/stylesheets/main.styl'
     ])
