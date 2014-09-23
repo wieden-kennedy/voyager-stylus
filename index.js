@@ -1,5 +1,4 @@
-var csso = require('gulp-csso')
-  , plumber = require('gulp-plumber')
+var plumber = require('gulp-plumber')
   , stylus = require('gulp-stylus');
 
 module.exports = function (voyager) {
