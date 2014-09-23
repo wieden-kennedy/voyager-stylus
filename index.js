@@ -13,12 +13,12 @@ module.exports = function (voyager) {
   });
 
   voyager.task('write', 'styles-vendor', function (done) {
-    this.src('stylesheets/vendor/*')
+    this.src('stylesheets/vendor/**')
       .pipe(this.out('stylesheets'))
       .on('end', done);
   });
 
   voyager.cancelWatch('stylesheets/**/*.css');
-  voyager.watch(['stylesheets/**/*.styl', '!stylesheets/vendor/*'], 'styles');
+  voyager.watch(['stylesheets/**/*.styl', '!stylesheets/vendor/**'], 'styles');
 };
 
