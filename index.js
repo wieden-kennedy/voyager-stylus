@@ -1,4 +1,5 @@
-var plumber = require('gulp-plumber')
+var csso = require('gulp-csso')
+  , plumber = require('gulp-plumber')
   , stylus = require('gulp-stylus');
 
 module.exports = function (voyager) {
@@ -13,7 +14,20 @@ module.exports = function (voyager) {
 
   voyager.task('write', 'styles-vendor', function (done) {
     this.src('stylesheets/vendor/**')
+      .pipe(this.out('stylesheets/vendor'))
+      .on('end', done);
+  });
+
+  voyager.task('build', 'styles', function (done) {
+    this.src(['stylesheets/**/*.css', '!stylesheets/vendor/**'])
+      .pipe(csso())
       .pipe(this.out('stylesheets'))
+      .on('end', done);
+  });
+
+  voyager.task('build', 'styles-vendor', function (done) {
+    this.src('stylesheets/vendor/**')
+      .pipe(this.out('stylesheets/vendor'))
       .on('end', done);
   });
 
