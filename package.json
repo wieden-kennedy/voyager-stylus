@@ -1,6 +1,6 @@
 {
   "name": "voyager-stylus",
-  "version": "0.2.13",
+  "version": "0.2.14",
   "description": "Stylus task for voyager",
   "keywords": [
     "voyager", "stylus", "csso", "task"
